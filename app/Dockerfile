@@ -17,7 +17,7 @@ php5-cli \
 git \
 wget
 
-RUN rm -rf /files/ && mkdir -p /files/ && cd /files/ && git clone https://github.com/mugithi/drupal-configuration.git .  && cd /files/build && chmod 777 entrypoint.sh
+RUN rm -rf /files/ && mkdir -p /files/build && cd /files/build && wget -O https://raw.githubusercontent.com/mugithi/egs-drupal-template/master/files/build/entrypoint.sh  .  && cd /files/build && chmod 777 entrypoint.sh
 
 ENTRYPOINT ["/files/build/entrypoint.sh"]
 
