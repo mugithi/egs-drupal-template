@@ -27,7 +27,7 @@ ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sed -i 's=;cgi.fix_pathinfo\=1=cgi.fix_pathinfo\=0=g' /etc/php5/fpm/php.ini
 mkdir -p /files/config/
 wget https://raw.githubusercontent.com/mugithi/egs-drupal-template/master/files/config/default -O  /files/config/default
-wget https://raw.githubusercontent.com/mugithi/egs-drupal-template/master/files/config/www.conf -O /flies/config/www.conf
+wget https://raw.githubusercontent.com/mugithi/egs-drupal-template/master/files/config/www.conf -O /files/config/www.conf
 cp /files/config/default /etc/nginx/sites-available/default
 cp /files/config/www.conf /etc/php5/fpm/pool.d/www.conf
 
