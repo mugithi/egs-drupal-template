@@ -1,0 +1,27 @@
+version: '2'
+services:
+
+#Create the application service
+ app:
+  build: app/.
+#Variables to be passed into shell during the build
+  env_file: .env
+  ports:
+   - "80:80"
+  depends_on:
+   - db
+  networks:
+   - front
+   - back
+
+#Create the application service
+ db:
+  build: db/.
+  networks:
+   - back
+
+networks:
+  front:
+   driver: bridge
+  back: 
+   driver: bridge
